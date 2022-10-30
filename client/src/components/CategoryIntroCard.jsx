@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Typography } from "antd";
+import Card from "antd/lib/card/Card";
 const { Title } = Typography;
 
 /**
@@ -8,15 +9,11 @@ const { Title } = Typography;
  */
 const CategoryIntroCard = ({ title, icon }) => {
   return (
-    <Col>
-      <Row>
-        <Col>
-          <Title level={2}>{title}</Title>
-        </Col>
+    <Col className="custom-intro-card">
+      <Row justify="center">
+        <Title>{title}</Title>
       </Row>
-      <Row>
-        <Col></Col>
-      </Row>
+      <Row justify="center" align="middle">{icon}</Row>
     </Col>
   );
 };

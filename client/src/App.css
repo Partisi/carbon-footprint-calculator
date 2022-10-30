@@ -2,3 +2,13 @@
   text-align: center;
   padding: 48px;
 }
+
+.custom-intro-card {
+  margin: 16px;
+  border: 1px solid rgb(221, 221, 221);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 8px;
+  padding: 24px;
+
+  width: 240px;
+}
