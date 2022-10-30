@@ -3,6 +3,14 @@
   padding: 48px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-family: 'Merriweather', serif;
+}
+
 .custom-intro-card {
   margin: 16px;
   border: 1px solid rgb(221, 221, 221);
@@ -10,5 +18,18 @@
   border-radius: 8px;
   padding: 24px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
   width: 240px;
+  height: 240px;
+
+  transition: transform 1s;
+}
+
+.custom-intro-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
