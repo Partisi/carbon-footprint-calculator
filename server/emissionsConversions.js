@@ -2,17 +2,17 @@ const emissionsConversions = {
     housing: {
         "electricity": { emissionsPerUnit: 0.0429, unit: "kWh" },
         "gas": { emissionsPerUnit: 5.3060, unit: "therm" },
-        "oil": { emissionsPerUnit: 2.6892, unit: "litre" },
-        "waste": { emissionsPerUnit: 0.6300, unit: "kilogram" },
-        "water": { emissionsPerUnit: 0.0106, unit: "litre" },
+        "oil": { emissionsPerUnit: 2.6892, unit: "liter" },
+        "waste": { emissionsPerUnit: 3.4994, unit: "pound" },
+        "water": { emissionsPerUnit: 0.0106, unit: "liter" },
     },
     travel: {
-        "car": { emissionsPerUnit: 0.5711, unit: "kilometer" },
-        "bus": { emissionsPerUnit: 0.5711, unit: "kilometer" },
-        "metro": { emissionsPerUnit: 0.28485, unit: "kilometer" },
-        "taxi": { emissionsPerUnit: 0.5711, unit: "kilometer" },
-        "train": { emissionsPerUnit: 0.28485, unit: "kilometer" },
-        "plane": { emissionsPerUnit: 0.101, unit: "kilometer" },
+        "car": { emissionsPerUnit: 0.9191, unit: "mile" },
+        "bus": { emissionsPerUnit: 0.9191, unit: "mile" },
+        "metro": { emissionsPerUnit: 0.4584, unit: "mile" },
+        "taxi": { emissionsPerUnit: 0.9191, unit: "mile" },
+        "train": { emissionsPerUnit: 0.4584, unit: "mile" },
+        "plane": { emissionsPerUnit: 0.1625, unit: "mile" },
     },
     food: {
         "redmeat": { emissionsPerUnit: 0.0195, unit: "gram" },
@@ -60,9 +60,9 @@ module.exports = { emissionsConversions }
  * - 1 mmBtu == 10 therms
  * - 5.306 kgs of CO2 per therm
  *
- * coLITRE =  2.68927 (kgs of CO2 per litre)
+ * coliter =  2.68927 (kgs of CO2 per liter)
  * - 10.18 kgs of CO2 per gallon (Emissions Factors for Greenhouse Gas Inventories; Distillate Fuel Oil No. 1)
- * - 2.68927 kgs of CO2 per litre
+ * - 2.68927 kgs of CO2 per liter
  *
  * coKG = (kgs of CO2 per kg of wasate)
  * - 0.63 metric tons of CO2 per ton of waste (Emissions Factors for Greenhouse Gas Inventories; Mixed MSW)

@@ -18,7 +18,7 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "kWh/year",
                 required: false,
-                tooltip: ""
+                tooltip: "An average household in America goes through about 10,000 kWh a year."
             },
             {
                 name: "gas",
@@ -26,31 +26,31 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "therms/year",
                 required: false,
-                tooltip: ""
+                tooltip: "Only about 50% of households use natural gas with the average of those with natural gas coming to around 700 therms a year. Most households use EITHER electricity or natural gas."
             },
             {
                 name: "oil",
                 label: "Fuel Oil Use (Yearly)",
                 type: Number,
-                suffix: "litres/year",
+                suffix: "liters/year",
                 required: false,
-                tooltip: ""
+                tooltip: "Only about 5 million households in America use fuel oil with the average being around 2,000 liters a year."
             },
             {
                 name: "waste",
                 label: "Waste (Weekly)",
                 type: Number,
-                suffix: "kg/week",
+                suffix: "lb/week",
                 required: false,
-                tooltip: ""
+                tooltip: "Each garbage bag can be roughly equal to 40 pounds of waste."
             },
             {
                 name: "water",
                 label: "Water",
                 type: Number,
-                suffix: "litres/day",
+                suffix: "liters/day",
                 required: false,
-                tooltip: ""
+                tooltip: "The average water use per person is around 300 liters a day."
             },
         ],
     },
@@ -63,23 +63,23 @@ export const calculatorForms = {
                 name: "car",
                 label: "Distance Driven",
                 type: Number,
-                suffix: "km/month",
+                suffix: "miles/month",
                 required: false,
-                tooltip: ""
+                tooltip: "The average distance driven per month in America is about 1,000 miles."
             },
             {
                 name: "bus",
                 label: "Distance Traveled in Bus",
                 type: Number,
-                suffix: "km/month",
+                suffix: "miles/month",
                 required: false,
-                tooltip: ""
+                tooltip: "This input can vary widely but if you use the bus as often as someone who drives, you may also use 1,000 miles a month as a reference point here."
             },
             {
                 name: "metro",
                 label: "Distance Traveled in Metro",
                 type: Number,
-                suffix: "km/month",
+                suffix: "miles/month",
                 required: false,
                 tooltip: ""
             },
@@ -87,7 +87,7 @@ export const calculatorForms = {
                 name: "taxi",
                 label: "Distance Traveled in Taxi",
                 type: Number,
-                suffix: "km/month",
+                suffix: "miles/month",
                 required: false,
                 tooltip: ""
             },
@@ -95,7 +95,7 @@ export const calculatorForms = {
                 name: "train",
                 label: "Distance Traveled in Train",
                 type: Number,
-                suffix: "km/month",
+                suffix: "miles/month",
                 required: false,
                 tooltip: ""
             },
@@ -103,9 +103,9 @@ export const calculatorForms = {
                 name: "plane",
                 label: "Distance Traveled in Plane",
                 type: Number,
-                suffix: "km/month",
+                suffix: "miles/month",
                 required: false,
-                tooltip: ""
+                tooltip: "For your reference, a flight from New York to Los Angeles is about 2,700 miles while a flight from New York to Rome is about 4,200 miles."
             }
         ]
     },
@@ -117,73 +117,73 @@ export const calculatorForms = {
                 name: "redmeat",
                 label: "Red Meat Consumption",
                 type: Number,
-                suffix: "kCals/day",
+                suffix: "grams/day",
                 required: false,
-                tooltip: ""
+                tooltip: "A nice ribeye steak is about 300 grams of red meat."
             },
             {
                 name: "whitemeat",
                 label: "White Meat Consumption",
                 type: Number,
-                suffix: "kCals/day",
+                suffix: "grams/day",
                 required: false,
-                tooltip: ""
+                tooltip: "The average chicken breast is about 170 grams of white meat."
             },
             {
                 name: "dairy",
                 label: "Dairy Consumption",
                 type: Number,
-                suffix: "kCals/day",
+                suffix: "grams/day",
                 required: false,
-                tooltip: ""
+                tooltip: "One cup of milk is about 250 grams while a slice of american cheese is about 30 grams."
             },
             {
                 name: "cereal",
                 label: "Cereals Consumption",
                 type: Number,
-                suffix: "kCals/day",
+                suffix: "grams/day",
                 required: false,
-                tooltip: ""
+                tooltip: "The average loaf of bread is about 400 grams."
             },
             {
                 name: "vegetable",
                 label: "Vegetables Consumption",
                 type: Number,
-                suffix: "kCals/day",
+                suffix: "grams/day",
                 required: false,
-                tooltip: ""
+                tooltip: "The average recommended amount is about 400 grams (so for most people the average consumption is about 100 grams :P)."
             },
             {
                 name: "fruit",
                 label: "Fruits Consumption",
                 type: Number,
-                suffix: "kCals/day",
+                suffix: "grams/day",
                 required: false,
-                tooltip: ""
+                tooltip: "Average recommended per day is about 400 grams of fruit."
             },
             {
                 name: "oil",
                 label: "Oils Consumption",
                 type: Number,
-                suffix: "kCals/day",
+                suffix: "grams/day",
                 required: false,
-                tooltip: ""
+                tooltip: "1 cup of olive oil is about 200 grams."
             },
             {
                 name: "snack",
                 label: "Snacks Consumption",
                 type: Number,
-                suffix: "kCals/day",
+                suffix: "grams/day",
                 required: false,
-                tooltip: ""
+                tooltip: "A regular bag of Doritos is about 50 grams."
             },
             {
                 name: "drink",
                 label: "Drinks Consumption",
                 type: Number,
-                suffix: "kCals/day",
+                suffix: "grams/day",
                 required: false,
-                tooltip: ""
+                tooltip: "A soda can be between 40-60 grams each."
             },
         ]
     },
@@ -197,7 +197,7 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "Average household electrical bill is about $122 per month in America."
             },
             {
                 name: "household",
@@ -205,7 +205,7 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "These include anyday items in your household and can range from $50 per month to $200 per month."
             },
             {
                 name: "clothes",
@@ -229,7 +229,7 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "Including sports, movie theaters, and other 'fun' activities."
             },
             {
                 name: "other",
@@ -242,7 +242,7 @@ export const calculatorForms = {
         ],
     },
     services: {
-        description: "Taking a step back to view our daily lives in a larger picture - we can see how key areas of our lives contribute to global emissions. While these costs are generally unavoidable, we can still be concious of our decisions and maybe make an effort to be just a bit greener.",
+        description: "Taking a step back to view our daily lives in a larger picture - we can see how key areas of our lives contribute to global emissions. While these costs are generally unavoidable, we can still be concious of our decisions and maybe make an effort to be just a bit greener. This part, however, is a bit more loose on the estimate side.",
         period: "per month",
         inputs: [
             {
@@ -251,7 +251,7 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "Average health costs depending on age from $0 a month for young adults to $500 for adults on average."
             },
             {
                 name: "finance",
@@ -283,7 +283,7 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "Inclusive of gasoline and other vehicle-releated expenses."
             },
             {
                 name: "communications",
@@ -291,7 +291,7 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "Cell phone and other communications."
             },
             {
                 name: "other",

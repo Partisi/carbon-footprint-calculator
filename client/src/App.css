@@ -45,7 +45,8 @@ h1, h2, h3, h4, h5, h6 {
 
   overflow-y: scroll;
 
-  width: 1080px;
+  width: 100%;
+  max-width: 1080px;
   height: 720px;
 
   position: absolute;

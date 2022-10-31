@@ -35,7 +35,7 @@ const ViewCard = ({ category, goBack }) => {
   return (
     <div className="calculate-category-container">
       <Spin tip="Loading..." spinning={loading}>
-        <Row align="top" gutter={32}>
+        <Row align="top" gutter={48}>
           {/* Left Side Card w/ General Description */}
           <Col span={10}>
             <Button
