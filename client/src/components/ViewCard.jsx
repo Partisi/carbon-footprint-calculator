@@ -15,7 +15,7 @@ const ViewCard = ({ category, goBack }) => {
     try {
       console.log(formValues);
       const urlEndpoint = `http://localhost:3001/calculate-emissions/${category}`;
-      const calculationResponse = await axios.post(urlEndpoint, { formValues });
+      const calculationResponse = await axios.post(urlEndpoint, { ...formValues });
       console.log("Response: ", calculationResponse);
     } catch (error) {
       console.log(error);

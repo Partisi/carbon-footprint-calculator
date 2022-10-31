@@ -1,38 +1,47 @@
 const emissionsConversions = {
-    housing: {
-        coKWH: 0.0429, // how much kg of CO2 per kWh? from the US average
-        coTHERMS: 5.3060, // how much kg of CO2 per therm of natural gas?
-        coLITRE: 2.6892, // kg of CO2 per litre of gas
-        coKG: 0.6300, // kg of CO2 per kg of waste
-    },
-    travel: {
-        coCarKM: 0.5711, // kg of CO2 per kilometer
-        coTrainKM: 0.28485, // kg of CO2 per km of train
-        coFlyKM: 0.101, // kg of CO2 per km of flying
-    },
-    food: {
-        coRedMeatGRAMS: 0.0195, // each food is how many kg of CO2 per gram
-        coWhiteMeatGRAMS: 0.0037,
-        coDairyGRAMS: 0.0042,
-        coCerealGRAMS: 0.0018,
-        coVegetablesGRAMS: 0.0007,
-        coFruitsGRAMS: 0.0013,
-        coOilsGRAMS: 0.0040,
-        coSnacksGrams: 0.0015,
-        coDrinksGRAMS: 0.0006,
-    },
-    products: {
-        coDOLLARS: 0.47,  // kg of CO2 per dollar spent average
-    },
-    services: {
-        coHealthDOLLARS: 0.2, // kg of cO2 per dollar spent on average
-        coFinanceDOLLARS: 0.14, // if unknown for specific sector, use avg (0.2)
-        coRecreationDOLLARS: 0.2,
-        coEducationDOLLARS: 0.2,
-        coVehicleDOLLARS: 0.37,
-        coCommunicationsDOLLARS: 0.2,
-        coOtherDOLLARS: 0.2,
-    },
+    housing: [
+        { key: "electricity", emissionsPerUnit: 0.0429, unit: "kWh" },
+        { key: "gas", emissionsPerUnit: 5.3060, unit: "therm" },
+        { key: "oil", emissionsPerUnit: 2.6892, unit: "litre" },
+        { key: "waste", emissionsPerUnit: 0.6300, unit: "kilogram" },
+        { key: "water", emissionsPerUnit: 0.0106, unit: "litre" },
+    ],
+    travel: [
+        { key: "car", emissionsPerUnit: 0.5711, unit: "kilometer" },
+        { key: "bus", emissionsPerUnit: 0.5711, unit: "kilometer" },
+        { key: "metro", emissionsPerUnit: 0.28485, unit: "kilometer" },
+        { key: "taxi", emissionsPerUnit: 0.5711, unit: "kilometer" },
+        { key: "train", emissionsPerUnit: 0.28485, unit: "kilometer" },
+        { key: "plane", emissionsPerUnit: 0.101, unit: "kilometer" },
+    ],
+    food: [
+        { key: "redmeat", emissionsPerUnit: 0.0195, unit: "gram" },
+        { key: "whitemeat", emissionsPerUnit: 0.0037, unit: "gram" },
+        { key: "dairy", emissionsPerUnit: 0.0042, unit: "gram" },
+        { key: "cereal", emissionsPerUnit: 0.0018, unit: "gram" },
+        { key: "vegetable", emissionsPerUnit: 0.0007, unit: "gram" },
+        { key: "fruit", emissionsPerUnit: 0.0013, unit: "gram" },
+        { key: "oil", emissionsPerUnit: 0.0040, unit: "gram" },
+        { key: "snack", emissionsPerUnit: 0.0015, unit: "gram" },
+        { key: "drink", emissionsPerUnit: 0.0006, unit: "gram" },
+    ],
+    products: [
+        { key: "electrical", emissionsPerUnit: 0.47, unit: "dollar" },
+        { key: "household", emissionsPerUnit: 0.47, unit: "dollar" },
+        { key: "clothes", emissionsPerUnit: 0.47, unit: "dollar" },
+        { key: "medical", emissionsPerUnit: 0.47, unit: "dollar" },
+        { key: "recreational", emissionsPerUnit: 0.47, unit: "dollar" },
+        { key: "other", emissionsPerUnit: 0.47, unit: "dollar" },
+    ],
+    services: [
+        { key: "health", emissionsPerUnit: 0.20, unit: "dollar" },
+        { key: "finance", emissionsPerUnit: 0.14, unit: "dollar" },
+        { key: "recreation", emissionsPerUnit: 0.20, unit: "dollar" },
+        { key: "education", emissionsPerUnit: 0.20, unit: "dollar" },
+        { key: "vehicle", emissionsPerUnit: 0.37, unit: "dollar" },
+        { key: "communications", emissionsPerUnit: 0.20, unit: "dollar" },
+        { key: "other", emissionsPerUnit: 0.20, unit: "dollar" },
+    ],
 
 }
 

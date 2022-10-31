@@ -26,9 +26,20 @@ app.get("/test", (req, res) => {
  */
 app.post("/calculate-emissions/housing", (req, res) => {
     console.log(req.body)
+    console.log(emissionsConversions.housing)
     try {
         let totalEmissions = 0
 
+        const conversions = {
+            electricity: "coKWH",
+            gas: "coTHERMS",
+            oil: "coLITRE",
+            waste: "coKG",
+            water: "coWaterLITRE"
+        }
+        totalEmissions += (emissionsConversions.housing["coKWH"] * req.body["electricity"])
+
+        console.log(totalEmissions)
         res.status(200).send({ totalEmissions })
     } catch (error) {
         console.log(error)
