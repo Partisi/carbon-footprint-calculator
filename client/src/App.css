@@ -1,6 +1,7 @@
+
 .app {
   text-align: center;
-  padding: 48px;
+  padding: 48px 24px;
 }
 
 * {
@@ -15,7 +16,9 @@ h1, h2, h3, h4, h5, h6 {
 .custom-intro-card {
   margin: 16px;
   border: 1px solid rgb(221, 221, 221);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 8px;
   padding: 24px;
 
@@ -36,11 +39,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .calculate-category-container {
-
-  border-left: 4px solid rgb(221, 221, 221);
-  border-right: 4px solid rgb(221, 221, 221);
-
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 8px;
   padding: 24px;
+
+  overflow-y: scroll;
 
   width: 1080px;
   height: 720px;

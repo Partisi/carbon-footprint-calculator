@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Row, Col, Typography, InputNumber } from "antd";
+import { Row, Col, Typography, InputNumber, Divider } from "antd";
 import { capitalize } from "../utils";
 import { Spin } from "antd";
 import { Button, Form, Input } from "antd";
 import { calculatorForms } from "../calculatorForms";
 import axios from "axios";
 import EmissionsResult from "./EmissionsResult";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const { Title, Text } = Typography;
+const { Title, Text, Paragraph } = Typography;
 
 const ViewCard = ({ category, goBack }) => {
   // Backend Function Call
@@ -33,18 +35,27 @@ const ViewCard = ({ category, goBack }) => {
   return (
     <div className="calculate-category-container">
       <Spin tip="Loading..." spinning={loading}>
-        <Row align="top">
+        <Row align="top" gutter={32}>
           {/* Left Side Card w/ General Description */}
           <Col span={10}>
-            <Button onClick={() => goBack()}>Go Back</Button>
-            <Title>{capitalize(category)}</Title>
-            <Text>{calculatorForm.description}</Text>
-            <Text>
+            <Button
+              onClick={() => goBack()}
+              size="large"
+              shape="round"
+              style={{ background: "#f0f0f0" }}
+            >
+              <FontAwesomeIcon icon={faChevronLeft} size="xl" color="#4dc1ff" />
+              <Text style={{ color: "#4dc1ff" }}>Go Back</Text>
+            </Button>
+            <Divider></Divider>
+            <Title level={2}>{capitalize(category)}</Title>
+            <Paragraph>{calculatorForm.description}</Paragraph>
+            <Paragraph>
               Please fill in the details to the form to the right! If you are
               unsure of what your use is, hover over the tooltip in the input's
               label to view more details. If you are still unsure, feel free to
               leave the input blank!
-            </Text>
+            </Paragraph>
           </Col>
 
           {/* Right Side Main Form Inputs OR the Emission Results */}
@@ -53,7 +64,13 @@ const ViewCard = ({ category, goBack }) => {
               <EmissionsResult totalEmissions={showEmissions} />
             ) : (
               <>
-                <Text>{calculatorForm.period}</Text>
+                {!!calculatorForm.period && (
+                  <Row justify="end" style={{ width: "100%" }}>
+                    <Text style={{ color: "gray" }}>
+                      each input is {calculatorForm.period}
+                    </Text>
+                  </Row>
+                )}
                 <RenderForm
                   calculatorFormInputs={calculatorForm.inputs}
                   handleEmissionsCalculations={handleEmissionsCalculations}
@@ -71,11 +88,7 @@ const ViewCard = ({ category, goBack }) => {
 // Abstracts away the category and uses the form inputs from "client/src/calculatorForms.js"
 const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
   const onFinish = (formValues) => {
-    console.log("Success:", formValues);
     handleEmissionsCalculations(formValues);
-  };
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
   };
 
   return (
@@ -84,7 +97,6 @@ const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
       layout="vertical"
       initialValues={{ remember: true }}
       onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       {calculatorFormInputs.map((eachInput, inputIndex) => {
@@ -106,8 +118,11 @@ const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
             {eachInput.type === Number ? (
               <InputNumber
                 addonAfter={eachInput.suffix}
+                placeholder="0"
                 style={{
                   width: "100%",
+                  min: 0,
+                  max: 10000000,
                 }}
               />
             ) : (
@@ -117,14 +132,17 @@ const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
         );
       })}
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
+      <Form.Item>
+        <Button
+          type="primary"
+          htmlType="submit"
+          style={{ width: "100%", height: "64px" }}
+        >
           Submit
         </Button>
       </Form.Item>
     </Form>
   );
 };
-
 
 export default ViewCard;

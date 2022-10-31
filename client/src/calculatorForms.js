@@ -46,7 +46,7 @@ export const calculatorForms = {
             },
             {
                 name: "water",
-                label: "Water (daily)",
+                label: "Water",
                 type: Number,
                 suffix: "litres/day",
                 required: false,
@@ -115,7 +115,7 @@ export const calculatorForms = {
         inputs: [
             {
                 name: "redmeat",
-                label: "Red Meat Consumption(daily)",
+                label: "Red Meat Consumption",
                 type: Number,
                 suffix: "kCals/day",
                 required: false,
@@ -123,7 +123,7 @@ export const calculatorForms = {
             },
             {
                 name: "whitemeat",
-                label: "White Meat Consumption (daily)",
+                label: "White Meat Consumption",
                 type: Number,
                 suffix: "kCals/day",
                 required: false,
@@ -131,7 +131,7 @@ export const calculatorForms = {
             },
             {
                 name: "dairy",
-                label: "Dairy Consumption (daily)",
+                label: "Dairy Consumption",
                 type: Number,
                 suffix: "kCals/day",
                 required: false,

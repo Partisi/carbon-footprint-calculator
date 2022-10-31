@@ -13,7 +13,7 @@ import {
   faShirt,
 } from "@fortawesome/free-solid-svg-icons";
 
-const { Title } = Typography;
+const { Title, Paragraph } = Typography;
 
 /**
  * Main App Component to Render the Categories the user can choose to calculate from
@@ -28,7 +28,7 @@ function App() {
       <div className="app">
         {/* Top Introduction to Calculator */}
         <Title level={1}>Carbon Footprint Calculator</Title>
-        <Divider orientation="center">
+        <Divider orientation="center" plain>
           Where would you like to calculate your carbon footprint?
         </Divider>
 
