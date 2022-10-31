@@ -1,9 +1,14 @@
-import { Row, Col, Typography, InputNumber, Space } from "antd";
+import { Row, Typography, Space } from "antd";
 import React from "react";
-const { Title, Paragraph, Text, Link } = Typography;
+const { Paragraph, Text, Link } = Typography;
 
+/**
+ * Displays the results of the calculation in the same card as form
+ */
 const EmissionsResult = ({ totalEmissions }) => {
+  // Calculates how many Big Macs this emissions total is.
   const bigMacProductions = (totalEmissions / 2.35).toFixed(0);
+
   return (
     <Space
       direction="vertical"
@@ -16,6 +21,7 @@ const EmissionsResult = ({ totalEmissions }) => {
         padding: 24,
       }}
     >
+      {/* Main Results Container */}
       <Row align="middle" justify="center">
         <Paragraph style={{ fontSize: 32 }}>
           <Text style={{ color: "blue" }}>
@@ -29,6 +35,8 @@ const EmissionsResult = ({ totalEmissions }) => {
           estimate.
         </Paragraph>
       </Row>
+
+      {/* Displays the 'fun' fact about equivalence to Big Macs */}
       {totalEmissions > 1 && (
         <Row align="bottom" justify="center">
           <Paragraph style={{ color: "black" }}>

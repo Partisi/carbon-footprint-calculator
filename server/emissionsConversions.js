@@ -1,6 +1,9 @@
+/**
+ * Total conversions for each input value with their emissions per unit
+ */
 const emissionsConversions = {
-    housing: {
-        "electricity": { emissionsPerUnit: 0.0429, unit: "kWh" },
+    housing: { // category that these conversions are associated with
+        "electricity": { emissionsPerUnit: 0.0429, unit: "kWh" }, // i.e. for each kWh, we produce 0.0429 kgs of CO2 emissions.
         "gas": { emissionsPerUnit: 5.3060, unit: "therm" },
         "oil": { emissionsPerUnit: 2.6892, unit: "liter" },
         "waste": { emissionsPerUnit: 3.4994, unit: "pound" },
@@ -48,7 +51,9 @@ const emissionsConversions = {
 module.exports = { emissionsConversions }
 
 /**
- * Calculations
+ * Calculations (how each value was calculated)
+ * Although this is messy and might be better to put elsewhere, more useful to show my thinking process here.
+ * 
  *
  * coKWH = 0.04296426929 (kgs of CO2 per kWh)
  * - 947.2 lbs of CO2 per mWh (from Emissions Factors for Greenhouse Gas Inventories)

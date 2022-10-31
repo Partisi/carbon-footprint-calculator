@@ -1,8 +1,16 @@
 import React, { useState } from "react";
-import { Row, Col, Typography, InputNumber, Divider } from "antd";
+import {
+  Row,
+  Col,
+  Typography,
+  InputNumber,
+  Divider,
+  Spin,
+  Button,
+  Form,
+  Input,
+} from "antd";
 import { capitalize } from "../utils";
-import { Spin } from "antd";
-import { Button, Form, Input } from "antd";
 import { calculatorForms } from "../calculatorForms";
 import axios from "axios";
 import EmissionsResult from "./EmissionsResult";
@@ -11,16 +19,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const { Title, Text, Paragraph } = Typography;
 
+/**
+ * Views the input form for calculations based on category selected in `client/src/App.jsx`
+ */
 const ViewCard = ({ category, goBack }) => {
-  // Backend Function Call
-  const [calculatorForm] = useState(calculatorForms[category]);
-  const [loading, setLoading] = useState(false);
-  const [showEmissions, setShowingEmissions] = useState(false);
+  const [calculatorForm] = useState(calculatorForms[category]); // gets the correct form to render
+  const [loading, setLoading] = useState(false); // if we are fetching from backend (async)
+  const [showEmissions, setShowingEmissions] = useState(false); // if we are displaying the results
 
+  // handles the backend function call to calculate the inputs for total yearly emissions
   async function handleEmissionsCalculations(formValues) {
     try {
-      setLoading(true);
+      setLoading(true); // if takes awhile to calculate, have loading state
 
+      // we want to adjust for yearly factor (i.e. food input is per day so must multiply by 365)
       const yearlyAdjustedValues = {};
       for (var key of Object.keys(formValues)) {
         if (formValues[key] === undefined) {
@@ -32,12 +44,15 @@ const ViewCard = ({ category, goBack }) => {
         }
       }
 
+      // hits endpoint along with category
       const urlEndpoint = `http://localhost:3001/calculate-emissions`;
       const calculationResponse = await axios.post(urlEndpoint, {
         ...yearlyAdjustedValues,
         category,
       });
       console.log("Response: ", calculationResponse);
+
+      // tell component we now have the results
       setShowingEmissions(calculationResponse.data.totalEmissions);
     } catch (error) {
       console.log(error);
@@ -99,6 +114,8 @@ const ViewCard = ({ category, goBack }) => {
 // Main Rendering Form
 // Abstracts away the category and uses the form inputs from "client/src/calculatorForms.js"
 const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
+
+  // Sends finish request to parent component
   const onFinish = (formValues) => {
     handleEmissionsCalculations(formValues);
   };
@@ -112,6 +129,10 @@ const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
       autoComplete="off"
     >
       {calculatorFormInputs.map((eachInput, inputIndex) => {
+        // For the form inputs, please see `client/src/calculatorForms.js`
+        // based on the category calculating, we display the relevant inputs
+
+        // In this return, either can be String or Number (everything is a number for now, but can easily add more inputs later)
         return (
           <Form.Item
             name={eachInput.name}

@@ -1,7 +1,7 @@
 import "./App.css";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import { useState } from "react";
-import { Row, Col, Typography, Divider } from "antd";
+import { Row, Typography, Divider } from "antd";
 import CategoryIntroCard from "./components/CategoryIntroCard";
 import ViewCard from "./components/ViewCard";
 
@@ -13,7 +13,7 @@ import {
   faShirt,
 } from "@fortawesome/free-solid-svg-icons";
 
-const { Title, Paragraph } = Typography;
+const { Title } = Typography;
 
 /**
  * Main App Component to Render the Categories the user can choose to calculate from

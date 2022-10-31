@@ -1,17 +1,25 @@
+/**
+ * Main Forms for each category.
+ * Each category has their own 'form' that is here in an obj (can also be JSON if needed)
+ * Based on the category to show in the card format, will get the appropiate inputs here.
+ * 
+ * Also, each input is a Number, but made into parameter for future flexibility.
+ */
 
+// Categories: housing, travel, food, products, and services
 export const calculatorForms = {
-    housing: {
+    housing: { // the category we are currently calculating for
         description: "Calculating your household emissions is a perfect place to start! Before you go off and start to make your community greener, it is important to have your house in order first! Household emissions are the easiest for individuals to adjust and this calculator would give you a great idea of where your household emissions really come from.",
-        period: "",
-        inputs: [
+        period: "", // over what period are each input? (for this category specifically, there are different periods so None here)
+        inputs: [ // each 'form' input
             {
-                name: "people",
+                name: "people", // the key associated
                 label: "People in Household",
                 type: Number,
-                suffix: "people",
+                suffix: "people", // what to display after input
                 required: true,
-                tooltip: "",
-                factor: 1,
+                tooltip: "", // if we want to have any extra info displayed if hover over input
+                factor: 1, // factor to make this value into yearly estimate (i.e. input asks for monthly so our factor will be '12' so we get yearly estimate)
             },
             {
                 name: "electricity",
