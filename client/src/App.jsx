@@ -25,8 +25,8 @@ function App() {
 
   const [viewingCard, setViewingCard] = useState(null);
 
-  function handleCardClicked(key) {
-    setViewingCard(key);
+  function handleCardClicked(category) {
+    setViewingCard(category);
   }
 
   if (viewingCard === null) {
@@ -39,19 +39,19 @@ function App() {
 
         <Row justify="center">
           <CategoryIntroCard
-            title="Housing"
+            category="housing"
             color="red"
             icon={faHouse}
             onClick={handleCardClicked}
           />
           <CategoryIntroCard
-            title="Travel"
+            category="travel"
             color="orange"
             icon={faCar}
             onClick={handleCardClicked}
           />
           <CategoryIntroCard
-            title="Food"
+            category="food"
             color="green"
             icon={faBurger}
             onClick={handleCardClicked}
@@ -59,13 +59,13 @@ function App() {
         </Row>
         <Row justify="center">
           <CategoryIntroCard
-            title="Products"
+            category="products"
             color="blue"
             icon={faShirt}
             onClick={handleCardClicked}
           />
           <CategoryIntroCard
-            title="Services"
+            category="services"
             color="purple"
             icon={faSchool}
             onClick={handleCardClicked}
@@ -74,7 +74,7 @@ function App() {
       </div>
     );
   } else {
-    return <ViewCard key={viewingCard} />;
+    return <ViewCard category={viewingCard} goBack={() => setViewingCard(null)} />;
   }
 }
 
