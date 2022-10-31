@@ -6,9 +6,10 @@ const { Paragraph, Text, Link } = Typography;
  * Displays the results of the calculation in the same card as form
  */
 const EmissionsResult = ({ totalEmissions }) => {
+
   // Calculates how many Big Macs this emissions total is.
   const bigMacProductions = (totalEmissions / 2.35).toFixed(0);
-
+  
   return (
     <Space
       direction="vertical"
@@ -23,7 +24,7 @@ const EmissionsResult = ({ totalEmissions }) => {
     >
       {/* Main Results Container */}
       <Row align="middle" justify="center">
-        <Paragraph style={{ fontSize: 32 }}>
+        <Paragraph style={{ fontSize: 32, textAlign:'center' }}>
           <Text style={{ color: "blue" }}>
             You emit {totalEmissions} kg of CO
           </Text>

@@ -40,7 +40,7 @@ const ViewCard = ({ category, goBack }) => {
         } else {
           yearlyAdjustedValues[key] =
             formValues[key] *
-            calculatorForm.inputs.find((o) => o.name == key).factor;
+            calculatorForm.inputs.find((o) => o.name === key).factor;
         }
       }
 
