@@ -36,13 +36,13 @@ p {
 
 .calculate-category-container {
 
-  border: 1px solid rgb(221, 221, 221);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-left: 4px solid rgb(221, 221, 221);
+  border-right: 4px solid rgb(221, 221, 221);
 
   padding: 24px;
 
-  width: 720px;
-  height: 480px;
+  width: 1080px;
+  height: 720px;
 
   position: absolute;
   top: 50%;

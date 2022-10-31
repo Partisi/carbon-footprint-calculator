@@ -6,7 +6,7 @@ import { Button, Form, Input } from "antd";
 import { calculatorForms } from "../calculatorForms";
 import axios from "axios";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 const ViewCard = ({ category, goBack }) => {
   // Backend Function Call
@@ -22,15 +22,21 @@ const ViewCard = ({ category, goBack }) => {
   }
   return (
     <div className="calculate-category-container">
-      <Row type="flex" align="top">
+      <Row align="top">
         {/* Left Side Card w/ General Description */}
-        <Col>
+        <Col span={10}>
           <Button onClick={() => goBack()}>Go Back</Button>
           <Title>{capitalize(category)}</Title>
+          <Text>
+            Please fill in the details to the form to the right! If you are
+            unsure of what your use is, hover over the tooltip in the input's
+            label to view more details. If you are still unsure, feel free to
+            leave the input blank!
+          </Text>
         </Col>
 
         {/* Right Side Main Form Inputs */}
-        <Col>
+        <Col span={14}>
           <RenderForm
             category={category}
             handleEmissionsCalculations={handleEmissionsCalculations}
