@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Typography, Divider, Select, InputNumber } from "antd";
 import { capitalize } from "../utils";
-
+import { Alert, Spin } from "antd";
 import { Button, Form, Input } from "antd";
 import { calculatorForms } from "../calculatorForms";
 import axios from "axios";
@@ -11,41 +11,57 @@ const { Title, Text } = Typography;
 const ViewCard = ({ category, goBack }) => {
   // Backend Function Call
   const [calculatorForm] = useState(calculatorForms[category]);
+  const [loading, setLoading] = useState(false);
+  const [showEmissions, setShowingEmissions] = useState(false);
+
   async function handleEmissionsCalculations(formValues) {
     try {
-      console.log(formValues);
+      setLoading(true);
       const urlEndpoint = `http://localhost:3001/calculate-emissions`;
-      const calculationResponse = await axios.post(urlEndpoint, { ...formValues, category });
+      const calculationResponse = await axios.post(urlEndpoint, {
+        ...formValues,
+        category,
+      });
       console.log("Response: ", calculationResponse);
+      setShowingEmissions(calculationResponse.data.totalEmissions);
     } catch (error) {
       console.log(error);
     }
+    setLoading(false);
   }
   return (
     <div className="calculate-category-container">
-      <Row align="top">
-        {/* Left Side Card w/ General Description */}
-        <Col span={10}>
-          <Button onClick={() => goBack()}>Go Back</Button>
-          <Title>{capitalize(category)}</Title>
-          <Text>{calculatorForm.description}</Text>
-          <Text>
-            Please fill in the details to the form to the right! If you are
-            unsure of what your use is, hover over the tooltip in the input's
-            label to view more details. If you are still unsure, feel free to
-            leave the input blank!
-          </Text>
-        </Col>
+      <Spin tip="Loading..." spinning={loading}>
+        <Row align="top">
+          {/* Left Side Card w/ General Description */}
+          <Col span={10}>
+            <Button onClick={() => goBack()}>Go Back</Button>
+            <Title>{capitalize(category)}</Title>
+            <Text>{calculatorForm.description}</Text>
+            <Text>
+              Please fill in the details to the form to the right! If you are
+              unsure of what your use is, hover over the tooltip in the input's
+              label to view more details. If you are still unsure, feel free to
+              leave the input blank!
+            </Text>
+          </Col>
 
-        {/* Right Side Main Form Inputs */}
-        <Col span={14}>
-          <Text>{calculatorForm.period}</Text>
-          <RenderForm
-            calculatorFormInputs={calculatorForm.inputs}
-            handleEmissionsCalculations={handleEmissionsCalculations}
-          />
-        </Col>
-      </Row>
+          {/* Right Side Main Form Inputs OR the Emission Results */}
+          <Col span={14}>
+            {!!showEmissions ? (
+              <Results totalEmissions={showEmissions} />
+            ) : (
+              <>
+                <Text>{calculatorForm.period}</Text>
+                <RenderForm
+                  calculatorFormInputs={calculatorForm.inputs}
+                  handleEmissionsCalculations={handleEmissionsCalculations}
+                />
+              </>
+            )}
+          </Col>
+        </Row>
+      </Spin>
     </div>
   );
 };
@@ -109,10 +125,10 @@ const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
   );
 };
 
-const Result = ({ emissions }) => {
+const Results = ({ totalEmissions }) => {
   return (
     <div>
-      <h1>You emit {emissions}</h1>
+      <h1>You emit {totalEmissions}</h1>
     </div>
   );
 };
