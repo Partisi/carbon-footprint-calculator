@@ -9,11 +9,17 @@ import { calculatorForms } from "../calculatorForms";
 const { Title } = Typography;
 
 const ViewCard = ({ category, goBack }) => {
-  const [calculatorForm] = useState(calculatorForms[category]);
-
+  // Backend Function Call
+  async function handleEmissionsCalculations(formValues) {
+    try {
+      console.log(formValues);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="calculate-category-container">
-      <Row type="flex" align="middle">
+      <Row type="flex" align="top">
         {/* Left Side Card w/ General Description */}
         <Col>
           <Button onClick={() => goBack()}>Go Back</Button>
@@ -22,16 +28,23 @@ const ViewCard = ({ category, goBack }) => {
 
         {/* Right Side Main Form Inputs */}
         <Col>
-          <RenderForm calculatorForm={calculatorForm} />
+          <RenderForm
+            category={category}
+            handleEmissionsCalculations={handleEmissionsCalculations}
+          />
         </Col>
       </Row>
     </div>
   );
 };
 
-const RenderForm = ({ calculatorForm }) => {
-  const onFinish = (values) => {
-    console.log("Success:", values);
+// Main Rendering Form
+// Abstracts away the category and uses the form inputs from "client/src/calculatorForms.js"
+const RenderForm = ({ category, handleEmissionsCalculations }) => {
+  const [calculatorForm] = useState(calculatorForms[category]);
+  const onFinish = (formValues) => {
+    console.log("Success:", formValues);
+    handleEmissionsCalculations(formValues);
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -47,44 +60,33 @@ const RenderForm = ({ calculatorForm }) => {
       autoComplete="off"
     >
       {calculatorForm.map((eachInput, inputIndex) => {
-        if (eachInput.type === Number) {
-          return (
-            <Form.Item
-              name={eachInput.label}
-              key={inputIndex}
-              label={eachInput.label}
-              rules={[
-                {
-                  required: true,
-                  message: eachInput.error,
-                },
-              ]}
-            >
+        return (
+          <Form.Item
+            name={eachInput.label}
+            key={inputIndex}
+            label={eachInput.label}
+            tooltip={eachInput.tooltip}
+            rules={[
+              {
+                required: eachInput.required,
+                message: !!eachInput.error
+                  ? eachInput.error
+                  : "This input is required!",
+              },
+            ]}
+          >
+            {eachInput.type === Number ? (
               <InputNumber
                 addonAfter={eachInput.suffix}
                 style={{
                   width: "100%",
                 }}
               />
-            </Form.Item>
-          );
-        } else if (eachInput.type === String) {
-          return (
-            <Form.Item
-              name={eachInput.label}
-              key={inputIndex}
-              label={eachInput.label}
-              rules={[
-                {
-                  required: true,
-                  message: eachInput.error,
-                },
-              ]}
-            >
+            ) : (
               <Input />
-            </Form.Item>
-          );
-        }
+            )}
+          </Form.Item>
+        );
       })}
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

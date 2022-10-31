@@ -16,3 +16,7 @@ app.get("/test", (req, res) => {
     console.log("hit the test!")
     res.send("Hello World!");
 });
+
+app.post("/calculate-housing-emissions", (req, res) => {
+    console.log(req.body)
+})
