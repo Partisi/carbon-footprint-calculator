@@ -1,7 +1,7 @@
 
 export const calculatorForms = {
     housing: {
-        description: "",
+        description: "Calculating your household emissions is a perfect place to start! Before you go off and start to make your community greener, it is important to have your house in order first! Household emissions are the easiest for individuals to adjust and this calculator would give you a great idea of where your household emissions really come from.",
         period: "",
         inputs: [
             {
@@ -56,7 +56,7 @@ export const calculatorForms = {
     },
 
     travel: {
-        description: "",
+        description: "Traveling is a key factor in global Carbon Dioxide emissions - from cars to trains to planes. In today's modern world, there are a variety of different transportation methods with each option differing in its emissions. Thinking how you can get to work or school the greenest way possible makes a huge difference in global emissions!",
         period: "per month",
         inputs: [
             {
@@ -110,7 +110,7 @@ export const calculatorForms = {
         ]
     },
     food: {
-        description: "",
+        description: "Believe it or not - the food we eat everyday does affect global emissions. Food is processed, transported, and stored with each category differing in its carbon emissions runoff.",
         period: "per day",
         inputs: [
             {
@@ -188,7 +188,7 @@ export const calculatorForms = {
         ]
     },
     products: {
-        description: "",
+        description: "It is no secret that money (and capitalism to some extent) causes manufacturers to make more of the goods that are most in demand. Knowing where your dollars go for causing emissions may make you think twice before buying that new Louis Vuitton sweater.",
         period: "per month",
         inputs: [
             {
@@ -242,7 +242,7 @@ export const calculatorForms = {
         ],
     },
     services: {
-        description: "",
+        description: "Taking a step back to view our daily lives in a larger picture - we can see how key areas of our lives contribute to global emissions. While these costs are generally unavoidable, we can still be concious of our decisions and maybe make an effort to be just a bit greener.",
         period: "per month",
         inputs: [
             {
