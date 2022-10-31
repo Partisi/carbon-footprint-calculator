@@ -1,4 +1,4 @@
-export const emissionsConversions = {
+const emissionsConversions = {
     housing: {
         coKWH: 0.0429, // how much kg of CO2 per kWh? from the US average
         coTHERMS: 5.3060, // how much kg of CO2 per therm of natural gas?
@@ -33,8 +33,10 @@ export const emissionsConversions = {
         coCommunicationsDOLLARS: 0.2,
         coOtherDOLLARS: 0.2,
     },
-   
+
 }
+
+module.exports = { emissionsConversions }
 
 /**
  * Calculations

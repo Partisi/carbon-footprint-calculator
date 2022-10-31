@@ -73,7 +73,7 @@ const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
       {calculatorFormInputs.map((eachInput, inputIndex) => {
         return (
           <Form.Item
-            name={eachInput.label}
+            name={eachInput.name}
             key={inputIndex}
             label={eachInput.label}
             tooltip={eachInput.tooltip}

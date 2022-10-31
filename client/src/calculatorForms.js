@@ -5,34 +5,39 @@ export const calculatorForms = {
         period: "",
         inputs: [
             {
+                name: "people",
                 label: "People in Household",
                 type: Number,
                 suffix: "people",
                 required: true,
-                tooltip: ""
+                tooltip: "",
             },
             {
-                label: "Electricty Use (Yearly)",
+                name: "electricity",
+                label: "Electricity Use (Yearly)",
                 type: Number,
-                suffix: "kWh/yr",
+                suffix: "kWh/year",
                 required: false,
                 tooltip: ""
             },
             {
+                name: "gas",
                 label: "Natural Gas Use (Yearly)",
                 type: Number,
-                suffix: "therms/yr",
+                suffix: "therms/year",
                 required: false,
                 tooltip: ""
             },
             {
+                name: "oil",
                 label: "Fuel Oil Use (Yearly)",
                 type: Number,
-                suffix: "litres/yr",
+                suffix: "litres/year",
                 required: false,
                 tooltip: ""
             },
             {
+                name: "waste",
                 label: "Waste (Weekly)",
                 type: Number,
                 suffix: "kg/week",
@@ -40,6 +45,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "water",
                 label: "Water (daily)",
                 type: Number,
                 suffix: "litres/day",
@@ -54,6 +60,7 @@ export const calculatorForms = {
         period: "per month",
         inputs: [
             {
+                name: "car",
                 label: "Distance Driven",
                 type: Number,
                 suffix: "km/month",
@@ -61,6 +68,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "bus",
                 label: "Distance Traveled in Bus",
                 type: Number,
                 suffix: "km/month",
@@ -68,6 +76,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "metro",
                 label: "Distance Traveled in Metro",
                 type: Number,
                 suffix: "km/month",
@@ -75,6 +84,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "taxi",
                 label: "Distance Traveled in Taxi",
                 type: Number,
                 suffix: "km/month",
@@ -82,6 +92,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "train",
                 label: "Distance Traveled in Train",
                 type: Number,
                 suffix: "km/month",
@@ -89,6 +100,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "plane",
                 label: "Distance Traveled in Plane",
                 type: Number,
                 suffix: "km/month",
@@ -102,6 +114,7 @@ export const calculatorForms = {
         period: "per day",
         inputs: [
             {
+                name: "redmeat",
                 label: "Red Meat Consumption(daily)",
                 type: Number,
                 suffix: "kCals/day",
@@ -109,6 +122,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "whitemeat",
                 label: "White Meat Consumption (daily)",
                 type: Number,
                 suffix: "kCals/day",
@@ -116,6 +130,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "dairy",
                 label: "Dairy Consumption (daily)",
                 type: Number,
                 suffix: "kCals/day",
@@ -123,6 +138,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "cereals",
                 label: "Cereals Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -130,6 +146,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "veggies",
                 label: "Vegetables Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -137,6 +154,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "fruits",
                 label: "Fruits Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -144,6 +162,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "oils",
                 label: "Oils Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -151,6 +170,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "snacks",
                 label: "Snacks Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -158,6 +178,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "drinks",
                 label: "Drinks Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -171,6 +192,7 @@ export const calculatorForms = {
         period: "per month",
         inputs: [
             {
+                name: "electical",
                 label: "Electrical Cost",
                 type: Number,
                 suffix: "$ per month",
@@ -178,6 +200,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "household",
                 label: "Household Cost",
                 type: Number,
                 suffix: "$ per month",
@@ -185,6 +208,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "clothes",
                 label: "Clothes Cost",
                 type: Number,
                 suffix: "$ per month",
@@ -192,6 +216,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "medical",
                 label: "Medical Cost",
                 type: Number,
                 suffix: "$ per month",
@@ -199,6 +224,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "recreational",
                 label: "Recreational Cost",
                 type: Number,
                 suffix: "$ per month",
@@ -206,6 +232,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "other",
                 label: "Other Costs",
                 type: Number,
                 suffix: "$ per month",
@@ -219,6 +246,7 @@ export const calculatorForms = {
         period: "per month",
         inputs: [
             {
+                name: "health",
                 label: "Health Costs",
                 type: Number,
                 suffix: "$ per month",
@@ -226,6 +254,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "finance",
                 label: "Finance Costs",
                 type: Number,
                 suffix: "$ per month",
@@ -233,6 +262,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "recreation",
                 label: "Recreation Costs",
                 type: Number,
                 suffix: "$ per month",
@@ -240,6 +270,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "education",
                 label: "Education Costs",
                 type: Number,
                 suffix: "$ per month",
@@ -247,6 +278,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "vehicle",
                 label: "Vehicle Costs",
                 type: Number,
                 suffix: "$ per month",
@@ -254,6 +286,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "communications",
                 label: "Communications Costs",
                 type: Number,
                 suffix: "$ per month",
@@ -261,6 +294,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
+                name: "other",
                 label: "Other Costs",
                 type: Number,
                 suffix: "$ per month",
