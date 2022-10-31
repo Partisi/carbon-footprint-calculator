@@ -1,6 +1,5 @@
 import React from "react";
-import { Row, Col, Typography, Divider } from "antd";
-import Card from "antd/lib/card/Card";
+import { Col, Typography, Divider } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { capitalize } from "../utils";
 const { Title } = Typography;
