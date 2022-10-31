@@ -10,6 +10,7 @@ const { Title, Text } = Typography;
 
 const ViewCard = ({ category, goBack }) => {
   // Backend Function Call
+  const [calculatorForm] = useState(calculatorForms[category]);
   async function handleEmissionsCalculations(formValues) {
     try {
       console.log(formValues);
@@ -27,6 +28,7 @@ const ViewCard = ({ category, goBack }) => {
         <Col span={10}>
           <Button onClick={() => goBack()}>Go Back</Button>
           <Title>{capitalize(category)}</Title>
+          <Text>{calculatorForm.description}</Text>
           <Text>
             Please fill in the details to the form to the right! If you are
             unsure of what your use is, hover over the tooltip in the input's
@@ -37,8 +39,9 @@ const ViewCard = ({ category, goBack }) => {
 
         {/* Right Side Main Form Inputs */}
         <Col span={14}>
+          <Text>{calculatorForm.period}</Text>
           <RenderForm
-            category={category}
+            calculatorFormInputs={calculatorForm.inputs}
             handleEmissionsCalculations={handleEmissionsCalculations}
           />
         </Col>
@@ -49,8 +52,7 @@ const ViewCard = ({ category, goBack }) => {
 
 // Main Rendering Form
 // Abstracts away the category and uses the form inputs from "client/src/calculatorForms.js"
-const RenderForm = ({ category, handleEmissionsCalculations }) => {
-  const [calculatorForm] = useState(calculatorForms[category]);
+const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
   const onFinish = (formValues) => {
     console.log("Success:", formValues);
     handleEmissionsCalculations(formValues);
@@ -68,7 +70,7 @@ const RenderForm = ({ category, handleEmissionsCalculations }) => {
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
-      {calculatorForm.map((eachInput, inputIndex) => {
+      {calculatorFormInputs.map((eachInput, inputIndex) => {
         return (
           <Form.Item
             name={eachInput.label}
@@ -104,6 +106,14 @@ const RenderForm = ({ category, handleEmissionsCalculations }) => {
         </Button>
       </Form.Item>
     </Form>
+  );
+};
+
+const Result = ({ emissions }) => {
+  return (
+    <div>
+      <h1>You emit {emissions}</h1>
+    </div>
   );
 };
 
