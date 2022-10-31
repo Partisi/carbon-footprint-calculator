@@ -138,7 +138,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
-                name: "cereals",
+                name: "cereal",
                 label: "Cereals Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -146,7 +146,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
-                name: "veggies",
+                name: "vegetable",
                 label: "Vegetables Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -154,7 +154,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
-                name: "fruits",
+                name: "fruit",
                 label: "Fruits Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -162,7 +162,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
-                name: "oils",
+                name: "oil",
                 label: "Oils Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -170,7 +170,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
-                name: "snacks",
+                name: "snack",
                 label: "Snacks Consumption",
                 type: Number,
                 suffix: "kCals/day",
@@ -178,7 +178,7 @@ export const calculatorForms = {
                 tooltip: ""
             },
             {
-                name: "drinks",
+                name: "drink",
                 label: "Drinks Consumption",
                 type: Number,
                 suffix: "kCals/day",
