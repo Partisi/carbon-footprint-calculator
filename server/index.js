@@ -25,22 +25,16 @@ app.get("/test", (req, res) => {
  * Can also have a single endpoint with category in body and calculate based off that too
  */
 app.post("/calculate-emissions/housing", (req, res) => {
-    console.log(req.body)
-    console.log(emissionsConversions.housing)
+    const { body } = req
+    const conversions = emissionsConversions.housing
     try {
         let totalEmissions = 0
-
-        const conversions = {
-            electricity: "coKWH",
-            gas: "coTHERMS",
-            oil: "coLITRE",
-            waste: "coKG",
-            water: "coWaterLITRE"
+        for (var key of Object.keys(body)) {
+            if (key == "people") continue
+            totalEmissions += conversions[key].emissionsPerUnit * body[key]
         }
-        totalEmissions += (emissionsConversions.housing["coKWH"] * req.body["electricity"])
-
-        console.log(totalEmissions)
-        res.status(200).send({ totalEmissions })
+        totalEmissions = totalEmissions / body.people
+        res.status(200).send({ totalEmissions: totalEmissions.toFixed(2), units: "kgs of CO2" })
     } catch (error) {
         console.log(error)
         res.status(201).send({ error })
