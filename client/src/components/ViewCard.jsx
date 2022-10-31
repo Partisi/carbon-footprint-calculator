@@ -20,9 +20,21 @@ const ViewCard = ({ category, goBack }) => {
   async function handleEmissionsCalculations(formValues) {
     try {
       setLoading(true);
+
+      const yearlyAdjustedValues = {};
+      for (var key of Object.keys(formValues)) {
+        if (formValues[key] === undefined) {
+          yearlyAdjustedValues[key] = 0;
+        } else {
+          yearlyAdjustedValues[key] =
+            formValues[key] *
+            calculatorForm.inputs.find((o) => o.name == key).factor;
+        }
+      }
+
       const urlEndpoint = `http://localhost:3001/calculate-emissions`;
       const calculationResponse = await axios.post(urlEndpoint, {
-        ...formValues,
+        ...yearlyAdjustedValues,
         category,
       });
       console.log("Response: ", calculationResponse);

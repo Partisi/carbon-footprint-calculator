@@ -11,6 +11,7 @@ export const calculatorForms = {
                 suffix: "people",
                 required: true,
                 tooltip: "",
+                factor: 1,
             },
             {
                 name: "electricity",
@@ -18,7 +19,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "kWh/year",
                 required: false,
-                tooltip: "An average household in America goes through about 10,000 kWh a year."
+                tooltip: "An average household in America goes through about 10,000 kWh a year.",
+                factor: 1,
             },
             {
                 name: "gas",
@@ -26,7 +28,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "therms/year",
                 required: false,
-                tooltip: "Only about 50% of households use natural gas with the average of those with natural gas coming to around 700 therms a year. Most households use EITHER electricity or natural gas."
+                tooltip: "Only about 50% of households use natural gas with the average of those with natural gas coming to around 700 therms a year. Most households use EITHER electricity or natural gas.",
+                factor: 1,
             },
             {
                 name: "oil",
@@ -34,7 +37,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "liters/year",
                 required: false,
-                tooltip: "Only about 5 million households in America use fuel oil with the average being around 2,000 liters a year."
+                tooltip: "Only about 5 million households in America use fuel oil with the average being around 2,000 liters a year.",
+                factor: 1,
             },
             {
                 name: "waste",
@@ -42,7 +46,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "lb/week",
                 required: false,
-                tooltip: "Each garbage bag can be roughly equal to 40 pounds of waste."
+                tooltip: "Each garbage bag can be roughly equal to 40 pounds of waste.",
+                factor: 52
             },
             {
                 name: "water",
@@ -50,7 +55,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "liters/day",
                 required: false,
-                tooltip: "The average water use per person is around 300 liters a day."
+                tooltip: "The average water use per person is around 300 liters a day.",
+                factor: 365
             },
         ],
     },
@@ -65,7 +71,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "miles/month",
                 required: false,
-                tooltip: "The average distance driven per month in America is about 1,000 miles."
+                tooltip: "The average distance driven per month in America is about 1,000 miles.",
+                factor: 12,
             },
             {
                 name: "bus",
@@ -73,7 +80,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "miles/month",
                 required: false,
-                tooltip: "This input can vary widely but if you use the bus as often as someone who drives, you may also use 1,000 miles a month as a reference point here."
+                tooltip: "This input can vary widely but if you use the bus as often as someone who drives, you may also use 1,000 miles a month as a reference point here.",
+                factor: 12,
             },
             {
                 name: "metro",
@@ -81,7 +89,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "miles/month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             },
             {
                 name: "taxi",
@@ -89,7 +98,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "miles/month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             },
             {
                 name: "train",
@@ -97,7 +107,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "miles/month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             },
             {
                 name: "plane",
@@ -105,7 +116,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "miles/month",
                 required: false,
-                tooltip: "For your reference, a flight from New York to Los Angeles is about 2,700 miles while a flight from New York to Rome is about 4,200 miles."
+                tooltip: "For your reference, a flight from New York to Los Angeles is about 2,700 miles while a flight from New York to Rome is about 4,200 miles.",
+                factor: 12,
             }
         ]
     },
@@ -119,7 +131,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "grams/day",
                 required: false,
-                tooltip: "A nice ribeye steak is about 300 grams of red meat."
+                tooltip: "A nice ribeye steak is about 300 grams of red meat.",
+                factor: 365,
             },
             {
                 name: "whitemeat",
@@ -127,7 +140,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "grams/day",
                 required: false,
-                tooltip: "The average chicken breast is about 170 grams of white meat."
+                tooltip: "The average chicken breast is about 170 grams of white meat.",
+                factor: 365,
             },
             {
                 name: "dairy",
@@ -135,7 +149,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "grams/day",
                 required: false,
-                tooltip: "One cup of milk is about 250 grams while a slice of american cheese is about 30 grams."
+                tooltip: "One cup of milk is about 250 grams while a slice of american cheese is about 30 grams.",
+                factor: 365,
             },
             {
                 name: "cereal",
@@ -143,7 +158,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "grams/day",
                 required: false,
-                tooltip: "The average loaf of bread is about 400 grams."
+                tooltip: "The average loaf of bread is about 400 grams.",
+                factor: 365,
             },
             {
                 name: "vegetable",
@@ -151,7 +167,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "grams/day",
                 required: false,
-                tooltip: "The average recommended amount is about 400 grams (so for most people the average consumption is about 100 grams :P)."
+                tooltip: "The average recommended amount is about 400 grams (so for most people the average consumption is about 100 grams :P).",
+                factor: 365,
             },
             {
                 name: "fruit",
@@ -159,7 +176,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "grams/day",
                 required: false,
-                tooltip: "Average recommended per day is about 400 grams of fruit."
+                tooltip: "Average recommended per day is about 400 grams of fruit.",
+                factor: 365,
             },
             {
                 name: "oil",
@@ -167,7 +185,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "grams/day",
                 required: false,
-                tooltip: "1 cup of olive oil is about 200 grams."
+                tooltip: "1 cup of olive oil is about 200 grams.",
+                factor: 365,
             },
             {
                 name: "snack",
@@ -175,7 +194,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "grams/day",
                 required: false,
-                tooltip: "A regular bag of Doritos is about 50 grams."
+                tooltip: "A regular bag of Doritos is about 50 grams.",
+                factor: 365,
             },
             {
                 name: "drink",
@@ -183,7 +203,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "grams/day",
                 required: false,
-                tooltip: "A soda can be between 40-60 grams each."
+                tooltip: "A soda can be between 40-60 grams each.",
+                factor: 365,
             },
         ]
     },
@@ -197,7 +218,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: "Average household electrical bill is about $122 per month in America."
+                tooltip: "Average household electrical bill is about $122 per month in America.",
+                factor: 12,
             },
             {
                 name: "household",
@@ -205,7 +227,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: "These include anyday items in your household and can range from $50 per month to $200 per month."
+                tooltip: "These include anyday items in your household and can range from $50 per month to $200 per month.",
+                factor: 12,
             },
             {
                 name: "clothes",
@@ -213,7 +236,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             },
             {
                 name: "medical",
@@ -221,7 +245,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             },
             {
                 name: "recreational",
@@ -229,7 +254,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: "Including sports, movie theaters, and other 'fun' activities."
+                tooltip: "Including sports, movie theaters, and other 'fun' activities.",
+                factor: 12,
             },
             {
                 name: "other",
@@ -237,7 +263,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             }
         ],
     },
@@ -251,7 +278,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: "Average health costs depending on age from $0 a month for young adults to $500 for adults on average."
+                tooltip: "Average health costs depending on age from $0 a month for young adults to $500 for adults on average.",
+                factor: 12,
             },
             {
                 name: "finance",
@@ -259,7 +287,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             },
             {
                 name: "recreation",
@@ -267,7 +296,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             },
             {
                 name: "education",
@@ -275,7 +305,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             },
             {
                 name: "vehicle",
@@ -283,7 +314,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: "Inclusive of gasoline and other vehicle-releated expenses."
+                tooltip: "Inclusive of gasoline and other vehicle-releated expenses.",
+                factor: 12,
             },
             {
                 name: "communications",
@@ -291,7 +323,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: "Cell phone and other communications."
+                tooltip: "Cell phone and other communications.",
+                factor: 12,
             },
             {
                 name: "other",
@@ -299,7 +332,8 @@ export const calculatorForms = {
                 type: Number,
                 suffix: "$ per month",
                 required: false,
-                tooltip: ""
+                tooltip: "",
+                factor: 12,
             },
         ],
     }
