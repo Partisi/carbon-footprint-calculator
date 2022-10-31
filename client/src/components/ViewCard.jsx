@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Row, Col, Typography, Divider, Select, InputNumber } from "antd";
+import { Row, Col, Typography, InputNumber } from "antd";
 import { capitalize } from "../utils";
-import { Alert, Spin } from "antd";
+import { Spin } from "antd";
 import { Button, Form, Input } from "antd";
 import { calculatorForms } from "../calculatorForms";
 import axios from "axios";
+import EmissionsResult from "./EmissionsResult";
 
 const { Title, Text } = Typography;
 
@@ -49,7 +50,7 @@ const ViewCard = ({ category, goBack }) => {
           {/* Right Side Main Form Inputs OR the Emission Results */}
           <Col span={14}>
             {!!showEmissions ? (
-              <Results totalEmissions={showEmissions} />
+              <EmissionsResult totalEmissions={showEmissions} />
             ) : (
               <>
                 <Text>{calculatorForm.period}</Text>
@@ -125,12 +126,5 @@ const RenderForm = ({ calculatorFormInputs, handleEmissionsCalculations }) => {
   );
 };
 
-const Results = ({ totalEmissions }) => {
-  return (
-    <div>
-      <h1>You emit {totalEmissions}</h1>
-    </div>
-  );
-};
 
 export default ViewCard;

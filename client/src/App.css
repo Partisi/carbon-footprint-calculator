@@ -3,13 +3,14 @@
   padding: 48px;
 }
 
+* {
+  font-family: 'Merriweather', serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
 
-p {
-  font-family: 'Merriweather', serif;
-}
 
 .custom-intro-card {
   margin: 16px;
