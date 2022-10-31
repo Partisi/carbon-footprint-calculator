@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 const cors = require("cors");
+const { emissionsConversions } = require("./emissionsConversions");
 
 const port = process.env.PORT || 3001;
 
@@ -17,6 +18,7 @@ app.get("/test", (req, res) => {
     res.send("Hello World!");
 });
 
-app.post("/calculate-housing-emissions", (req, res) => {
+app.post("/calculate-emissions/housing", (req, res) => {
     console.log(req.body)
+    let totalEmissions = 0
 })

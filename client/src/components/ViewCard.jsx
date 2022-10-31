@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Row, Col, Typography, Divider, Select, InputNumber } from "antd";
 import { capitalize } from "../utils";
 
-import { Button, Form, Input, Radio, Checkbox } from "antd";
-import { Option } from "antd/lib/mentions";
+import { Button, Form, Input } from "antd";
 import { calculatorForms } from "../calculatorForms";
+import axios from "axios";
 
 const { Title } = Typography;
 
@@ -13,6 +13,9 @@ const ViewCard = ({ category, goBack }) => {
   async function handleEmissionsCalculations(formValues) {
     try {
       console.log(formValues);
+      const urlEndpoint = `http://localhost:3001/calculate-emissions/${category}`;
+      const calculationResponse = await axios.post(urlEndpoint, { formValues });
+      console.log("Response: ", calculationResponse);
     } catch (error) {
       console.log(error);
     }
