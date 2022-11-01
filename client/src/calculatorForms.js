@@ -221,7 +221,7 @@ export const calculatorForms = {
         period: "per month",
         inputs: [
             {
-                name: "electical",
+                name: "electrical",
                 label: "Electrical Cost",
                 type: Number,
                 suffix: "$ per month",
